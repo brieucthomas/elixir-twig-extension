@@ -1,0 +1,26 @@
+{
+    "name": "brieucthomas/elixir-twig-extension",
+    "license": "MIT",
+    "type": "library",
+    "description" : "Laravel Elixir twig extension",
+    "keywords": ["php", "laravel", "twig", "extension", "symfony"],
+    "autoload": {
+        "psr-4": {
+            "BrieucThomas\\Twig\\Extension\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BrieucThomas\\Twig\\Extension\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.3",
+        "twig/twig": "^1.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.1-dev"
+        }
+    }
+}

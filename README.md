@@ -49,7 +49,7 @@ use BrieucThomas\Twig\Extension\ElixirExtension;
 
 $elixir = new ElixirExtension(
     $publicDir,     // the absolute public directory 
-    $buildDir,      // the elixir versionn build directory (default value is 'build')
+    $buildDir,      // the elixir build directory (default value is 'build')
     $manifestName   // the manifest filename (default value is 'rev-manifest.json')
 );
 $twig->addExtension($elixir);

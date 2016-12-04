@@ -15,8 +15,8 @@
         }
     },
     "require": {
-        "php": ">=5.3",
-        "twig/twig": "^1.0"
+        "php": ">=5.5.9",
+        "twig/twig": "~1.28|~2.0"
     },
     "extra": {
         "branch-alias": {

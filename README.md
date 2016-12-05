@@ -26,7 +26,7 @@ This twig extension is an adaptation of this `elixir()` function.
 
 ## Requirements
 
-You need PHP >= 5.3.0 to use the library, but the latest stable version 
+You need PHP >= 5.5.9 to use the library, but the latest stable version 
 of PHP is recommended.
 
 ## Install 
@@ -66,6 +66,24 @@ services:
         public: false
         tags:
             - { name: twig.extension }
+```
+
+### gulpfile.js example
+
+```javascript
+const elixir = require('laravel-elixir');
+
+elixir.config.publicPath = 'web';
+elixir.config.appPath = 'src';
+elixir.config.assetsPath = 'app/Resources/assets';
+
+elixir(function(mix) {
+    mix.scripts([
+        'core.js',
+    ]);
+    
+    mix.version(['web/js/all.js']);
+});
 ```
 
 ### Using the Extension

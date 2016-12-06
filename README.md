@@ -68,33 +68,40 @@ services:
             - { name: twig.extension }
 ```
 
-### gulpfile.js example
+### Create a gulpfile
+
+Here an example of `gulpfile.js` to compile and version 
+the script `app/Resources/js/app.js` :
 
 ```javascript
+// gulpfile.js
 const elixir = require('laravel-elixir');
 
+elixir.config.assetsPath = 'app/Resources';
 elixir.config.publicPath = 'web';
 elixir.config.appPath = 'src';
-elixir.config.assetsPath = 'app/Resources/assets';
+elixir.config.viewPath = 'app/Resources/views';
 
 elixir(function(mix) {
-    mix.scripts([
-        'core.js',
-    ]);
-    
-    mix.version(['web/js/all.js']);
+    // compile scripts to web/js/all.js (default output)
+    mix.scripts(['app.js']);
+
+    // version compiled scripts        
+    mix.version(['js/all.js']);
 });
 ```
 
 ### Using the Extension
 
 ``` twig
-<link href="{{ elixir('css/all.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ elixir('css/all.css') }}">
+<script src="{{ elixir('js/all.js') }}"></script>
 ```
 
 You can surround with the `asset` twig extension to make your 
 application more portable:
 
 ``` twig
-<link href="{{ asset(elixir('css/all.css')) }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ asset(elixir('css/all.css')) }}">
+<script src="{{ asset(elixir('js/all.js')) }}"></script>
 ```
